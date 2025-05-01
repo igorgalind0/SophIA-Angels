@@ -10,6 +10,10 @@
     height: auto;
 }
 
+.conteudo > div:last-child > img {
+    animation: flutuar 3s ease-in-out infinite;
+}
+
 .conteudo h1 {
     margin-top: 25px;
     font-size: 1.5rem;

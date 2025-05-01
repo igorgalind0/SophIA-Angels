@@ -17,7 +17,7 @@
     background-image: url('../img/pseudoelement.svg');
 }
 
-.time > div {
+.time > div ul {
     display: flex;
     justify-content: center;
     align-items: center;

@@ -2,6 +2,10 @@
     margin-top: 100px;
 }
 
+.sobre img {
+    animation: flutuar 3s ease-in-out infinite;
+}
+
 .sobre > h1 {
     text-align: center;
     font-size: 1.5rem;

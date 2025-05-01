@@ -1,3 +1,10 @@
+.parceiros {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    width: 100%;
+}
+
 .desenvolvimento {
     margin-top: 100px;
 }
@@ -25,10 +32,21 @@
     margin-top: 20px;
 }
 
-.desenvolvimento ul {
+#image-list {
     margin: 50px 0;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 40px;
+    width: max-content;
+    animation: slide 20s linear infinite;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
 }

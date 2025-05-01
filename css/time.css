@@ -25,6 +25,11 @@
     margin-top: 50px;
 }
 
+.time > div ul li:hover:nth-child(odd) {
+    transform: scale(1.05);
+    transition: .5s;
+}
+
 .time .time-list {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;

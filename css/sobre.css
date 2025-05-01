@@ -52,5 +52,6 @@
     flex: 1;
     margin-top: 50px;
     text-align: justify;
+    max-width: 60ch;
 }
   

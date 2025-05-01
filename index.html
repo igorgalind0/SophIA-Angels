@@ -11,28 +11,28 @@
         <div class="menu container">
             <div><img src="./img/logo.svg" alt="Logotipo Angels"></div>
             <ul class="menu-list">
-                <li><a href="">Home</a></li>
-                <li><a href="">Sobre</a></li>
-                <li><a href="">Time</a></li>
-                <li><a href="">Parceiros</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#time">Time</a></li>
+                <li><a href="#parceiros">Parceiros</a></li>
             </ul>
         </div>
     </nav>
 
     <main class="conteudo container">
         <div>
-            <div><img src="./img/logomain.svg" alt="Logo Angels"></div>
-            <h1>Predição de morte fetal através de modelos de inteligência artificial</h1>
+            <div><img class="fadeInDown" data-anime="200" src="./img/logomain.svg" alt="Logo Angels"></div>
+            <h1 class="fadeInDown" data-anime="200">Predição de morte fetal através de modelos de inteligência artificial</h1>
 
-            <p>A Angels é uma ferramenta desenvolvida para auxiliar o profissional de saúde na identificação de um possível caso de óbito fetal, oferecendo suporte à tomada de decisão durante o pré-natal. Utilizando inteligência artificial, a ferramenta busca minimizar desfechos negativos por meio de uma predição assertiva, contribuindo para um acompanhamento mais eficaz e preventivo.</p>
+            <p class="fadeInDown" data-anime="400">A Angels é uma ferramenta desenvolvida para auxiliar o profissional de saúde na identificação de um possível caso de óbito fetal, oferecendo suporte à tomada de decisão durante o pré-natal. Utilizando inteligência artificial, a ferramenta busca minimizar desfechos negativos por meio de uma predição assertiva, contribuindo para um acompanhamento mais eficaz e preventivo.</p>
 
-            <a class="button" href="#">Predição</a>
+            <a class="button fadeInDown" data-anime="600" class="button" href="#">Predição</a>
         </div>
 
-        <div><img src="./img/main/imgmain.svg" alt="Ilustração de Médico"></div>
+        <div><img class="fadeInDown" data-anime="800" src="./img/main/imgmain.svg" alt="Ilustração de Médico"></div>
     </main>
 
-    <section class="sobre container">
+    <section class="sobre container" id="sobre"  data-anima="scroll">
         <h1>Sobre</h1>
         <div class="sobre-conteudo">
             <div class="sobre-angels">
@@ -52,7 +52,7 @@
         </div>
     </section>
 
-    <section class="time container">
+    <section class="time container" id="time" data-anima="scroll">
         <h1>Nosso time</h1>
 
         <div>
@@ -120,13 +120,13 @@
         </ul>
     </section>
 
-    <section class="info container">
+    <section class="info container" data-anima="scroll">
         <div><img src="./img/infoimg.svg" alt="Ilustração pessoas montando o quebra-cabeça de uma lâmpada"></div>
 
         <p>A Angels foi desenvolvida por pesquisadores do dotLAB Brazil da Universidade de Pernambuco (UPE) em parceria com o grupo de pesquisa Carranca da Universidade Federal de Pernambuco (UFPE). A ferramenta inclui parte dos resultados da dissertação de mestrado da pesquisadora Maria Eduarda Ferro de Mello integrante do grupo de pesquisa dotLAB. A equipe do CarrancaLab assumiu o desafio de transformar essa inovação tecnológica em uma ferramenta prática e acessível para profissionais de saúde. O laboratório desenvolveu a interface e a usabilidade do sistema, assegurando que sua ergonomia atendesse às demandas clínicas e contribuindo para uma experiência intuitiva e eficiente.</p>
     </section>
 
-    <section class="desenvolvimento container">
+    <section class="desenvolvimento container" id="parceiros" data-anima="scroll">
         <h1>Desenvolvimento</h1>
 
         <div>
@@ -146,5 +146,7 @@
         </ul>
     </section>
 
+    <script src="./simple-anime.js"></script>
+    <script type="module" src="./script.js"></script>
 </body>
 </html>

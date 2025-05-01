@@ -1,0 +1,36 @@
+.fadeInDown {
+    transform: translate3d(0, -20px, 0);
+}
+
+.fadeInUp {
+    transform: translate3d(0, 20px, 0);
+}
+
+.fadeInRight {
+    transform: translate3d(20px, 0, 0);
+}
+
+.fadeInLeft {
+    transform: translate3d(-20px, 0, 0);
+}
+
+[data-anime] {
+    opacity: 0;
+}
+
+.anime {
+    opacity: 1;
+    transform: none;
+    transition: transform 0.8s, opacity 0.8s;
+}
+
+[data-anima="scroll"] {
+    opacity: 0;
+    transform: translate3d(-30px, 0, 0);
+    transition: .3s;
+  }
+
+[data-anima="scroll"].ativo {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }

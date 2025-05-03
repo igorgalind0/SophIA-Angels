@@ -25,7 +25,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 40px;
+    gap: 10px;
     margin-top: 50px;
 }
 
@@ -33,13 +33,30 @@
     flex: 1;
 }
 
+.sobre-angels-texto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sobre-angels h1 {
+    font-size: 2.6rem;
+    padding-bottom: 1.6rem;
+}
+
 .sobre-angels h1 > span {
     color: var(--cor-primaria);
 }
 
 .sobre-angels p {
-    margin-top: 20px;
+    font-size: 1rem;
+    margin-top: 20px auto 0 auto;
     text-align: justify;
+    line-height: 1.3;
+    width: 70%;
+    max-width: 60ch;
+    word-wrap: break-word;
 }
 
 .sobre-ferramenta {
@@ -51,9 +68,86 @@
   }
   
 .sobre-ferramenta > p {
+    font-size: 1rem;
     flex: 1;
-    margin-top: 50px;
+    margin-top: 50px auto 0 auto;
     text-align: justify;
-    max-width: 60ch;
+    max-width: 55ch;
+    line-height: 1.3;
+    width: 70%;
+    word-wrap: break-word;
 }
-  
+
+@media screen and (max-width: 1024px) {
+
+    .sobre-angels h1 {
+        font-size: 2.8rem;
+    }
+    
+    .sobre-angels-texto p {
+        font-size: 1.3rem;
+    }
+
+    .sobre-ferramenta > p {
+        font-size: 1.3rem;
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+    .sobre-angels {
+        flex-direction: column;
+      }
+
+    .sobre-angels-texto h1{
+        text-align: left;
+        width: 90%;
+    }  
+
+    .sobre-angels h1 {
+        font-size: 1.5rem;
+    }
+
+    .sobre-angels > div:first-child {
+        order: 2; 
+    }
+    
+    .sobre-angels > div:last-child {
+        order: 1;
+    }
+    
+    .sobre-angels-texto p {
+        font-size: 1rem;
+        width: 90%;
+        max-width: 60ch;
+    }
+    
+    .sobre img {
+        width: 50vw;
+        height: auto;
+        margin-top: 20px;
+    }
+
+    .sobre-ferramenta {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .sobre-ferramenta > p {
+        font-size: 1rem;
+        flex: 1;
+        width: 90%;
+        max-width: 60ch;
+        margin-top: 50px auto 0 auto;
+        text-align: left;
+        line-height: 1.3;
+        word-wrap: break-word;
+    }
+
+    .sobre-ferramenta img {
+        width: 50vw;
+        height: auto;
+        margin-top: 20px;
+    }
+    
+}

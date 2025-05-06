@@ -1,6 +1,6 @@
 .conteudo {
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 1fr 1fr;
     gap: 40px;
     margin-top: 100px;
 }
@@ -8,6 +8,12 @@
 .conteudo div div > img {
     width: 150px;
     height: auto;
+}
+
+.conteudo > div:last-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .conteudo > div:last-child > img {
@@ -23,7 +29,7 @@
 .conteudo p {
     margin-top: 25px;
     text-align: justify;
-    width: 60ch;
+    font-size: 1rem;
 }
 
 .button {
@@ -40,4 +46,32 @@
 
 .button:hover {
     background: #61264b;
+}
+
+@media (max-width: 1000px) {
+    .conteudo {
+        margin-top: 50px;
+    }
+    .conteudo div div > img {
+        width: 80px;
+    }
+
+    .conteudo h1{
+        font-size: 1.25rem;
+    }
+
+    .conteudo p {
+        font-size: .875rem;
+    }
+
+    .button {
+        padding: 15px 100px;
+        font-size: .875rem;
+    }
+}
+
+@media (max-width: 800px) {
+    .conteudo {
+        grid-template-columns: 1fr;
+    }
 }

@@ -27,11 +27,15 @@ a {
     margin-right: auto;
 }
 
+.marcacao {
+    color: var(--cor-secundaria);
+}
+
 img {
     max-width: 100%;
     height: auto;
     display: block;
-}
+  }
 
 @keyframes flutuar {
     0% {

@@ -22,8 +22,9 @@
 }
 
 .sobre-angels {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
     align-items: center;
     gap: 40px;
     margin-top: 50px;
@@ -38,22 +39,41 @@
 }
 
 .sobre-angels p {
+    font-size: 1rem;
     margin-top: 20px;
     text-align: justify;
 }
 
 .sobre-ferramenta {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
     gap: 40px;
     margin-top: 50px;
     align-items: center;
   }
   
 .sobre-ferramenta > p {
-    flex: 1;
-    margin-top: 50px;
+    font-size: 1rem;
     text-align: justify;
-    max-width: 60ch;
 }
-  
+
+@media (max-width: 1000px) {
+    .sobre-angels p {
+        font-size: .875rem;
+    }
+
+    .sobre-ferramenta > p {
+        font-size: .875rem;
+    }
+}
+
+@media (max-width: 750px) {
+    .sobre-angels, .sobre-ferramenta {
+        grid-template-columns: 1fr;
+    }
+
+    .sobre-angels div:first-child {
+        grid-row: 2;
+    }
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resultado</title>
+    <link rel="stylesheet" href="css/simulation.css" />
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/menu.css" />
+    <style>
+      /* Ajuste da agulha */
+      #needle {
+        transform-origin: center bottom; /* Define o ponto de rotação da base da agulha */
+        transition: transform 0.3s ease; /* Suaviza a rotação da agulha */
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="menu-bg" aria-label="primária">
+      <div class="menu container">
+        <div><img src="./img/logo.svg" alt="Logotipo Angels" /></div>
+        <ul class="menu-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#sobre">Sobre</a></li>
+          <li><a href="index.html#time">Time</a></li>
+          <li><a href="index.html#parceiros">Parceiros</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main>
+      <div class="result-container">
+        <p class="result-text">
+          Essa gestação tem <strong id="probText">--%</strong> de
+          <strong>probabilidade</strong> de <strong>morte fetal.</strong>
+        </p>
+        <div class="gauge-wrapper">
+          <img
+            class="imggraf"
+            src="./public/images/grafico.svg"
+            alt="Gráfico"
+          />
+          <div class="needle" id="needle">
+            <img
+              class="imggraf"
+              src="./public/images/needle.svg"
+              alt="Gráfico"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="form-buttons">
+        <a href="index.html"><button class="btn-back">Voltar</button></a>
+        <a href="index.html"><button class="btn-next">Nova predição</button></a>
+      </div>
+    </main>
+
+    <script>
+      window.onload = () => {
+        // Acessa o parâmetro 'prob' da URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const prob = parseFloat(urlParams.get('prob')); // Converte para número
+
+        // Verifique se a probabilidade foi passada corretamente
+        if (isNaN(prob)) {
+          console.error('Erro: A probabilidade é inválida');
+          alert('Erro ao processar a probabilidade.');
+          return; // Interrompe a execução caso o valor de prob seja inválido
+        }
+
+        console.log(`Probabilidade recebida da URL: ${prob}`); // Log para depuração
+
+        // Exibe a probabilidade como porcentagem
+        document.getElementById('probText').innerText = `${prob.toFixed(2)}%`;
+
+        // Ajuste o gráfico (agulha)
+        const angle = Math.min(180, Math.max(0, prob * 1.8)); // Ajusta o ângulo do gráfico
+
+        console.log(`Ajustando ângulo do gráfico: ${angle} graus`);
+
+        // Aplica a rotação da agulha com suavização
+        document.getElementById('needle').style.transition =
+          'transform 1s ease-in-out';
+        document.getElementById(
+          'needle',
+        ).style.transform = `rotate(${angle}deg)`;
+      };
+    </script>
+  </body>
+</html>

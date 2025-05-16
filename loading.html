@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resultado</title>
+    <link rel="stylesheet" href="css/simulation.css" />
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/menu.css" />
+  </head>
+  <body>
+    <nav class="menu-bg" aria-label="primária">
+      <div class="menu container">
+        <div><img src="./img/logo.svg" alt="Logotipo Angels" /></div>
+        <ul class="menu-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#sobre">Sobre</a></li>
+          <li><a href="index.html#time">Time</a></li>
+          <li><a href="index.html#parceiros">Parceiros</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main>
+      <div class="result-container">
+        <p class="result-text">
+          Essa gestação tem <strong id="probText">--%</strong> de
+          <strong>probabilidade</strong> de <strong>morte fetal.</strong>
+        </p>
+        <div class="gauge-wrapper">
+          <img
+            class="imggraf"
+            src="./public/images/grafico.png"
+            alt="Gráfico"
+          />
+          <div class="needle" id="needle"></div>
+        </div>
+      </div>
+      <div class="form-buttons">
+        <a href="index.html"><button class="btn-back">Voltar</button></a>
+        <a href="index.html"><button class="btn-next">Nova predição</button></a>
+      </div>
+    </main>
+
+    <script>
+      window.onload = async () => {
+        // Recupera os dados armazenados no localStorage
+        const data = JSON.parse(localStorage.getItem('gestanteData'));
+
+        if (!data) {
+          alert('Erro ao recuperar os dados do localStorage.');
+          window.location.href = 'index.html'; // Redireciona para a página inicial em caso de erro
+          return;
+        }
+
+        try {
+          // Envia os dados para o backend
+          const response = await fetch('http://localhost:5000/prever', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data),
+          });
+
+          // Verifica se a resposta foi bem-sucedida
+          if (!response.ok) {
+            console.error('Erro ao chamar o backend');
+            throw new Error('Erro ao chamar o backend');
+          }
+
+          const result = await response.json(); // Recebe a resposta do backend
+
+          console.log(result); // Log para verificar a resposta
+          const prob = result.probabilidade; // Acessa a probabilidade do backend
+
+          if (prob === undefined || isNaN(prob)) {
+            console.error('Erro: A probabilidade é undefined');
+            alert('Erro ao processar a probabilidade.');
+            return;
+          }
+
+          // Redireciona para a página de probabilidade com o valor correto
+          window.location.href = `probabilidade.html?prob=${prob}`;
+        } catch (error) {
+          console.error('Erro ao processar a requisição:', error);
+          alert('Houve um erro ao processar os dados. Tente novamente.');
+        }
+      };
+    </script>
+  </body>
+</html>

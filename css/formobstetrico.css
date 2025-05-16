@@ -1,0 +1,111 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background-color: #fff;
+}
+
+nav.navbar {
+  background-color: #d7b8f5;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+nav.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.logo {
+  width: 50px;
+  height: auto;
+  margin-right: auto;
+}
+
+.description {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  margin: 3rem 0;
+}
+.description h3 {
+  font-size: 1.563rem;
+  font-weight: 500 !important;
+}
+
+.imgcomp {
+  width: 250px;
+}
+
+.instruction h1 {
+  font-weight: 500;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.instruction h3 {
+  font-weight: 400;
+  font-size: 1.563rem;
+}
+
+.form-container {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 0 1rem;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-row label {
+  flex: 1;
+  text-align: right;
+  margin-right: 2rem;
+  font-weight: 500;
+}
+
+.form-row input {
+  flex: 1;
+  padding: 0.6rem;
+  border: none;
+  border-radius: 10px;
+  background-color: #f2f2f2;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.btn-back,
+.btn-next {
+  padding: 0.8rem 2rem;
+  font-size: 0.8rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.btn-back {
+  background-color: #f4e1ff;
+  color: #6c3483;
+}
+
+.btn-next {
+  background-color: #87388a;
+  color: white;
+}

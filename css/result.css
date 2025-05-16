@@ -1,0 +1,203 @@
+/* Estilos gerais para a página */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f7f7f7; /* Cor de fundo da página */
+  color: #333; /* Cor do texto */
+  margin: 0;
+  padding: 0;
+}
+
+/* Header da página */
+header {
+  background-color: #b1488a; /* Cor do cabeçalho */
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+}
+
+header .logo h1 {
+  font-size: 24px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+nav ul li a:hover {
+  color: #f2e4ff; /* Cor de destaque ao passar o mouse */
+}
+
+/* Contêiner principal de resultados */
+.result-container {
+  text-align: center;
+  margin: 40px auto;
+  max-width: 600px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Texto de resultado */
+.result-text {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+strong {
+  color: #5a073e; /* Cor de destaque no texto */
+}
+
+/* Botões */
+.buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #b1488a; /* Cor do fundo dos botões */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #e16e86; /* Cor ao passar o mouse */
+}
+
+.voltar {
+  background-color: #e16e86; /* Cor para o botão "Voltar" */
+}
+
+.nova {
+  background-color: #7c3b66; /* Cor para o botão "Nova previsão" */
+}
+
+.voltar:hover {
+  background-color: #b1488a;
+}
+
+.nova:hover {
+  background-color: #5a073e;
+}
+
+/* Gráfico do medidor */
+.gauge-wrapper {
+  position: relative;
+  width: 447px;
+  height: 175px;
+  margin: 0 auto;
+  top: 50px; /* Ajuste a posição de acordo com a necessidade */
+  overflow: hidden;
+}
+
+/* Grupo do gráfico (elementos dentro do gráfico) */
+.gauge-group {
+  position: absolute;
+  left: 10.49%;
+  right: 10.88%;
+  top: 0%;
+  bottom: -16.92%;
+}
+
+/* Vetor - Parte rosa (probabilidade mais baixa) */
+.vector-pink {
+  position: absolute;
+  left: 10.49%;
+  right: 50.79%;
+  top: 0.02%;
+  bottom: 0.57%;
+  background: #e16e86;
+}
+
+/* Vetor - Parte roxa (probabilidade média) */
+.vector-purple {
+  position: absolute;
+  left: 50.55%;
+  right: 22.6%;
+  top: 0%;
+  bottom: 30.2%;
+  background: #b1488a;
+}
+
+/* Vetor - Parte roxa escura (probabilidade alta) */
+.vector-dark-purple {
+  position: absolute;
+  left: 62%;
+  right: 10.88%;
+  top: 34.02%;
+  bottom: 0.59%;
+  background: #7c3b66;
+}
+
+/* Vetor - Parte lilás (área do medidor) */
+.vector-lilac {
+  position: absolute;
+  left: 35.6%;
+  right: 36.07%;
+  top: 63.17%;
+  bottom: 0.57%;
+  background: #f2e4ff;
+}
+
+/* Vetor - Linha de base (borda externa) */
+.vector-border {
+  position: absolute;
+  left: 24.83%;
+  right: 59.32%;
+  top: 75.08%;
+  bottom: -37.25%;
+  background: #5a073e;
+  transform: rotate(-47.7deg);
+}
+
+/* Vetor - Borda inferior (linha inferior do gráfico) */
+.vector-bottom {
+  position: absolute;
+  left: 0.13%;
+  right: 0.13%;
+  top: 99.67%;
+  bottom: 0.33%;
+  border: 1px solid #5a073e;
+}
+
+/* Agulha - Indicador da probabilidade */
+.needle {
+  position: absolute;
+  width: 50px;
+  height: 80px;
+  top: 50%;
+  left: 50%;
+  transform-origin: 50% 100%; /* Faz a rotação a partir da base da agulha */
+  transform: translateX(-50%) translateY(-50%);
+  transition: transform 1s ease-in-out;
+}
+
+/* Estilo de texto nas páginas */
+h1,
+p {
+  font-family: 'Poppins', sans-serif;
+}

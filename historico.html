@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/simulation.css" />
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/menu.css" />
+
+    <title>Histórico</title>
+  </head>
+  <body>
+    <script src="/js/modules/validaForm.js"></script>
+    <nav class="menu-bg" aria-label="primária">
+      <div class="menu container">
+        <div><img src="./img/logo.svg" alt="Logotipo Angels" /></div>
+        <ul class="menu-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#sobre">Sobre</a></li>
+          <li><a href="index.html#time">Time</a></li>
+          <li><a href="index.html#parceiros">Parceiros</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="container-intro">
+      <section class="description intro">
+        <img class="imgcomp" src="/img/form/computador.png" alt="computador" />
+        <div>
+          <h1>Histórico de saúde</h1>
+          <h3>Informe o histórico de saúde <br />da gestante para avaliação</h3>
+        </div>
+      </section>
+
+      <form onsubmit="return saveAndNext('historicoobstetrico.html')">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="hipertensao">Gestante com hipertensão</label>
+            <select name="has_arterial_hypertension" id="hipertensao" required>
+              <option value="" disabled selected>Selecione a opção</option>
+              <option value="true">Sim</option>
+              <option value="false">Não</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="diabetes">Gestante com diabetes</label>
+            <select name="has_diabetes" id="diabetes" required>
+              <option value="" disabled selected>Selecione a opção</option>
+              <option value="true">Sim</option>
+              <option value="false">Não</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="cirurgia_pelvica">Realizou cirurgia pélvica</label>
+            <select name="has_cirurgia_pelvica" id="cirurgia_pelvica" required>
+              <option value="" disabled selected>Selecione a opção</option>
+              <option value="true">Sim</option>
+              <option value="false">Não</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="infeccao_urinaria">Infecção urinária</label>
+            <select
+              name="has_infeccao_urinaria"
+              id="infeccao_urinaria"
+              required
+            >
+              <option value="" disabled selected>Selecione a opção</option>
+              <option value="true">Sim</option>
+              <option value="false">Não</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="malformacao_congenita">Malformação congênita</label>
+            <select
+              name="has_malformacao_familiar"
+              id="malformacao_congenita"
+              required
+            >
+              <option value="" disabled selected>Selecione a opção</option>
+              <option value="true">Sim</option>
+              <option value="false">Não</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="gemelaridade_familiar">Gemelaridade familiar</label>
+            <select
+              name="has_gemelaridade_familiar"
+              id="gemelaridade_familiar"
+              required
+            >
+              <option value="" disabled selected>Selecione a opção</option>
+              <option value="true">Sim</option>
+              <option value="false">Não</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="cardiopatia">Cardiopatia</label>
+            <select name="has_cardiopatia" id="cardiopatia" required>
+              <option value="" disabled selected>Selecione a opção</option>
+              <option value="true">Sim</option>
+              <option value="false">Não</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="desnutricao">Diagnóstico de desnutrição</label>
+            <select
+              name="mc_dae_diagnostico_desnutricao"
+              id="desnutricao"
+              required
+            >
+              <option value="" disabled selected>Selecione a opção</option>
+              <option value="true">Sim</option>
+              <option value="false">Não</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-buttons">
+          <button
+            class="btn-back"
+            type="button"
+            onclick="window.location.href='dadosgestante.html'"
+          >
+            Voltar
+          </button>
+          <button class="btn-next" type="submit">Próximo</button>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>

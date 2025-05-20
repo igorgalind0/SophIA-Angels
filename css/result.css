@@ -56,6 +56,20 @@ nav ul li a:hover {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+@media (max-width: 820px) {
+  .result-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 80px 20px 50px 20px;
+    max-width: 600px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+}
+
 /* Texto de resultado */
 .result-text {
   font-size: 18px;

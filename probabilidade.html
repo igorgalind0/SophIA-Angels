@@ -34,17 +34,18 @@
           <strong>probabilidade</strong> de <strong>morte fetal.</strong>
         </p>
         <div class="gauge-wrapper">
-          <img
-            class="imggraf"
-            src="./public/images/grafico.svg"
-            alt="Gráfico"
-          />
-          <div class="needle" id="needle">
+          <div class="gauge-center">
             <img
               class="imggraf"
-              src="./public/images/needle.svg"
+              src="./img/form/Group.svg"
               alt="Gráfico"
             />
+            <div class="needle" id="needle">
+              <img
+                class="needle-img"
+                alt=""
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -61,7 +62,7 @@
     </footer>
 
     <script>
-      window.onload = () => {
+     window.onload = () => {
         // Acessa o parâmetro 'prob' da URL
         const urlParams = new URLSearchParams(window.location.search);
         const prob = parseFloat(urlParams.get('prob')); // Converte para número
@@ -79,7 +80,11 @@
         document.getElementById('probText').innerText = `${prob.toFixed(2)}%`;
 
         // Ajuste o gráfico (agulha)
-        const angle = Math.min(180, Math.max(0, prob * 1.8)); // Ajusta o ângulo do gráfico
+
+        const minAngle = -100; 
+        const maxAngle = 80;
+        const angle = Math.min(maxAngle, Math.max(minAngle, (prob / 100) * (maxAngle - minAngle) + minAngle));  ; // Ajusta o ângulo do gráfico
+
 
         console.log(`Ajustando ângulo do gráfico: ${angle} graus`);
 
@@ -89,7 +94,7 @@
         document.getElementById(
           'needle',
         ).style.transform = `rotate(${angle}deg)`;
-      };
+      }; 
     </script>
   </body>
 </html>

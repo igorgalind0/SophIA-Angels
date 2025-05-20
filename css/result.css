@@ -45,6 +45,8 @@ nav ul li a:hover {
 
 /* Contêiner principal de resultados */
 .result-container {
+  display: flex;
+  flex-direction: column;
   text-align: center;
   margin: 40px auto;
   max-width: 600px;
@@ -52,6 +54,20 @@ nav ul li a:hover {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 820px) {
+  .result-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 80px 20px 50px 20px;
+    max-width: 600px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
 }
 
 /* Texto de resultado */
@@ -106,12 +122,18 @@ button:hover {
 
 /* Gráfico do medidor */
 .gauge-wrapper {
-  position: relative;
-  width: 447px;
-  height: 175px;
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
   top: 50px; /* Ajuste a posição de acordo com a necessidade */
   overflow: hidden;
+  position: relative;
+}
+
+.gauge-center {
+  position: relative;
+  width: fit-content;
 }
 
 /* Grupo do gráfico (elementos dentro do gráfico) */
@@ -187,13 +209,23 @@ button:hover {
 /* Agulha - Indicador da probabilidade */
 .needle {
   position: absolute;
-  width: 50px;
-  height: 80px;
-  top: 50%;
+  bottom: 10%;
   left: 50%;
-  transform-origin: 50% 100%; /* Faz a rotação a partir da base da agulha */
-  transform: translateX(-50%) translateY(-50%);
+  width: 25px;
+  height: 140px;
+  border-radius: 20px 1px 0 0;
+  transform: translateX(-50%) rotate(-100deg);
+  transform-origin: center bottom;
   transition: transform 1s ease-in-out;
+  background-image: url(../img/form/Vector.svg);
+
+ /* 
+  height: 80px;
+  left: 50%;
+  transform-origin: 50% 100%;*/ /* Faz a rotação a partir da base da agulha */
+  /*transform: translateX(-50%) translateY(-50%);
+  transition: transform 1s ease-in-out; */
+
 }
 
 /* Estilo de texto nas páginas */

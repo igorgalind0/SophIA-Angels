@@ -8,13 +8,6 @@
     <link rel="stylesheet" href="css/global.css" />
     <link rel="stylesheet" href="css/menu.css" />
     <link rel="stylesheet" href="css/result.css" />
-    <style>
-      /* Ajuste da agulha */
-      #needle {
-        transform-origin: center bottom; /* Define o ponto de rotação da base da agulha */
-        transition: transform 0.3s ease; /* Suaviza a rotação da agulha */
-      }
-    </style>
   </head>
   <body>
     <script type="module" src="./script.js"></script>
@@ -72,26 +65,23 @@
         const urlParams = new URLSearchParams(window.location.search);
         const prob = parseFloat(urlParams.get('prob')); // Converte para número
 
-        // Verifique se a probabilidade foi passada corretamente
         if (isNaN(prob)) {
           console.error('Erro: A probabilidade é inválida');
           alert('Erro ao processar a probabilidade.');
-          return; // Interrompe a execução caso o valor de prob seja inválido
+          return;
         }
 
-        console.log(`Probabilidade recebida da URL: ${prob}`); // Log para depuração
+        console.log(`Probabilidade recebida da URL: ${prob}`);
 
-        // Exibe a probabilidade como porcentagem
         document.getElementById('probText').innerText = `${prob.toFixed(2)}%`;
 
         // Ajuste o gráfico (agulha)
-
         const minAngle = -90;
         const maxAngle = 80;
         const angle = Math.min(
           maxAngle,
           Math.max(minAngle, (prob / 100) * (maxAngle - minAngle) + minAngle),
-        ); // Ajusta o ângulo do gráfico
+        );
 
         console.log(`Ajustando ângulo do gráfico: ${angle} graus`);
 

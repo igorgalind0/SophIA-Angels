@@ -8,18 +8,20 @@
     <title>Dados da Gestante</title>
   </head>
   <body>
-    <script src="/js/modules/validaForm.js"></script>
+    <script type="module" src="./script.js"></script>
+    <script  src="/js/modules/validaForm.js"></script>
     <!-- Inclusão do validaForm.js -->
     <nav class="menu-bg" aria-label="primária">
-      <div class="menu container">
-        <div><img src="./img/logo.svg" alt="Logotipo Angels" /></div>
-        <ul class="menu-list">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="index.html#sobre">Sobre</a></li>
-          <li><a href="index.html#time">Time</a></li>
-          <li><a href="index.html#parceiros">Parceiros</a></li>
-        </ul>
-      </div>
+        <div class="menu container">
+            <div><img src="./img/logo.svg" alt="Logotipo Angels"></div>
+            <button data-menu="button" aria-expanded="false" aria-controls="menu">Menu</button>
+            <ul data-menu="list">
+                <li><a href="#">Home</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#time">Time</a></li>
+                <li><a href="#parceiros">Parceiros</a></li>
+            </ul>
+        </div>
     </nav>
 
     <main class="container-intro">

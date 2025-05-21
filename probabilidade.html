@@ -17,14 +17,18 @@
     </style>
   </head>
   <body>
+    <script type="module" src="./script.js"></script>
     <nav class="menu-bg" aria-label="primária">
       <div class="menu container">
         <div><img src="./img/logo.svg" alt="Logotipo Angels" /></div>
-        <ul class="menu-list">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="index.html#sobre">Sobre</a></li>
-          <li><a href="index.html#time">Time</a></li>
-          <li><a href="index.html#parceiros">Parceiros</a></li>
+        <button data-menu="button" aria-expanded="false" aria-controls="menu">
+          Menu
+        </button>
+        <ul data-menu="list">
+          <li><a href="#">Home</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#time">Time</a></li>
+          <li><a href="#parceiros">Parceiros</a></li>
         </ul>
       </div>
     </nav>
@@ -50,6 +54,18 @@
       </div>
     </main>
 
+    <footer class="footer-bg">
+      <div class="footer container">
+        <p>
+          Layout por
+          <a href="https://www.instagram.com/carrancalabs/">@carrancalabs</a> |
+          desenvolvimento por
+          <a href="https://www.instagram.com/unifavipwyden/">@unifavip</a> | LTD
+          2025
+        </p>
+      </div>
+    </footer>
+
     <script>
       window.onload = () => {
         // Acessa o parâmetro 'prob' da URL
@@ -70,7 +86,7 @@
 
         // Ajuste o gráfico (agulha)
 
-        const minAngle = -100;
+        const minAngle = -90;
         const maxAngle = 80;
         const angle = Math.min(
           maxAngle,

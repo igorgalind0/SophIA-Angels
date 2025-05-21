@@ -3,6 +3,7 @@
   --cor-secundaria: #d3b5ed;
   --cor-texto: #000;
 }
+
 * {
   font-family: 'Poppins', Arial, Helvetica, sans-serif;
 }
@@ -60,3 +61,4 @@ img {
     transform: translateY(0);
   }
 }
+

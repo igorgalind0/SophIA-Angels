@@ -10,15 +10,19 @@
     <title>Histórico</title>
   </head>
   <body>
+    <script type="module" src="./script.js"></script>
     <script src="/js/modules/validaForm.js"></script>
     <nav class="menu-bg" aria-label="primária">
       <div class="menu container">
         <div><img src="./img/logo.svg" alt="Logotipo Angels" /></div>
-        <ul class="menu-list">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="index.html#sobre">Sobre</a></li>
-          <li><a href="index.html#time">Time</a></li>
-          <li><a href="index.html#parceiros">Parceiros</a></li>
+        <button data-menu="button" aria-expanded="false" aria-controls="menu">
+          Menu
+        </button>
+        <ul data-menu="list">
+          <li><a href="#">Home</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#time">Time</a></li>
+          <li><a href="#parceiros">Parceiros</a></li>
         </ul>
       </div>
     </nav>
@@ -130,9 +134,27 @@
           >
             Voltar
           </button>
-          <button class="btn-next" type="submit">Próximo</button>
+          <button
+            class="btn-next"
+            type="submit"
+            onclick="saveAndNext('historicoobstetrico')"
+          >
+            Próximo
+          </button>
         </div>
       </form>
     </main>
+
+    <footer class="footer-bg">
+      <div class="footer container">
+        <p>
+          Layout por
+          <a href="https://www.instagram.com/carrancalabs/">@carrancalabs</a> |
+          desenvolvimento por
+          <a href="https://www.instagram.com/unifavipwyden/">@unifavip</a> | LTD
+          2025
+        </p>
+      </div>
+    </footer>
   </body>
 </html>

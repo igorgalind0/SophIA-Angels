@@ -105,7 +105,7 @@ async function submitToBackend() {
   const finalData = { ...existing, ...data };
 
   // Chama a API de previsão
-  const response = await fetch('http://localhost:5000/prever', {
+  const response = await fetch('https://sophia.discloud.app/prever', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(finalData),

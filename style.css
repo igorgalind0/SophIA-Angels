@@ -1,10 +1,24 @@
-@import "./css/global.css";
-@import "./css/animacao.css";
-@import "./css/menu.css";
-@import "./css/variaveis.css";
-@import "./css/main.css";
-@import "./css/sobre.css";
-@import "./css/time.css";
-@import "./css/info.css";
-@import "./css/desenvolvimento.css";
-@import "./css/result.css";
+@import './css/global.css';
+@import './css/animacao.css';
+@import './css/menu.css';
+@import './css/variaveis.css';
+@import './css/main.css';
+@import './css/sobre.css';
+@import './css/time.css';
+@import './css/info.css';
+@import './css/desenvolvimento.css';
+@import './css/result.css';
+
+/* Agulha - Indicador da probabilidade */
+.needle {
+  position: absolute;
+  bottom: 0; /* Garantir que a base da agulha está na parte inferior */
+  left: 50%; /* Centraliza a agulha horizontalmente */
+  width: 25px;
+  height: 126px;
+  border-radius: 20px 1px 0 0;
+  background-image: url(../img/form/Vector.svg); /* Sua imagem de agulha */
+  transform-origin: 50% 100%; /* Ponto de rotação agora é na base da agulha */
+  transform: translateX(-50%) rotate(-90deg); /* A rotação começa da base (parte inferior) */
+  transition: transform 1s ease-in-out;
+}

@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Resultado</title>
     <link rel="stylesheet" href="css/simulation.css" />
-    <link rel="stylesheet" href="/css/global.css" />
-    <link rel="stylesheet" href="/css/menu.css" />
-    <link rel="stylesheet" href="/css/result.css">
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/menu.css" />
+    <link rel="stylesheet" href="css/result.css" />
     <style>
       /* Ajuste da agulha */
       #needle {
@@ -37,16 +37,9 @@
         </p>
         <div class="gauge-wrapper">
           <div class="gauge-center">
-            <img
-              class="imggraf"
-              src="./img/form/Group.svg"
-              alt="Gráfico"
-            />
+            <img class="imggraf" src="./img/form/Group.svg" alt="Gráfico" />
             <div class="needle" id="needle">
-              <img
-                class="needle-img"
-                alt=""
-              />
+              <img class="needle-img" alt="" />
             </div>
           </div>
         </div>
@@ -58,7 +51,7 @@
     </main>
 
     <script>
-     window.onload = () => {
+      window.onload = () => {
         // Acessa o parâmetro 'prob' da URL
         const urlParams = new URLSearchParams(window.location.search);
         const prob = parseFloat(urlParams.get('prob')); // Converte para número
@@ -77,10 +70,12 @@
 
         // Ajuste o gráfico (agulha)
 
-        const minAngle = -100; 
+        const minAngle = -90;
         const maxAngle = 80;
-        const angle = Math.min(maxAngle, Math.max(minAngle, (prob / 100) * (maxAngle - minAngle) + minAngle));  ; // Ajusta o ângulo do gráfico
-
+        const angle = Math.min(
+          maxAngle,
+          Math.max(minAngle, (prob / 100) * (maxAngle - minAngle) + minAngle),
+        ); // Ajusta o ângulo do gráfico
 
         console.log(`Ajustando ângulo do gráfico: ${angle} graus`);
 
@@ -90,7 +85,7 @@
         document.getElementById(
           'needle',
         ).style.transform = `rotate(${angle}deg)`;
-      }; 
+      };
     </script>
   </body>
 </html>

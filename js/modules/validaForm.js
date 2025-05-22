@@ -79,41 +79,10 @@ function saveAndNext(nextPage) {
 
   console.log(localStorage.getItem('gestanteData'));
 
-  // Redirecionar para a próxima página com os dados no localStorage
-  window.location.href = nextPage;
-  return false;
-}
+  // Usando setTimeout para garantir que o localStorage seja salvo antes do redirecionamento
+  setTimeout(() => {
+    window.location.href = nextPage;
+  }, 100);
 
-// Função para enviar os dados para o backend e redirecionar para a página de resultados
-async function submitToBackend() {
-  const form = document.querySelector('form');
-  if (!form.checkValidity()) {
-    form.reportValidity();
-    return false;
-  }
-
-  const data = {};
-  const inputs = form.querySelectorAll('input, select, textarea');
-  inputs.forEach((input) => {
-    const value = input.value;
-    if (value === 'true') data[input.name] = true;
-    else if (value === 'false') data[input.name] = false;
-    else data[input.name] = isNaN(value) ? value : Number(value);
-  });
-
-  const existing = JSON.parse(sessionStorage.getItem('predictData')) || {};
-  const finalData = { ...existing, ...data };
-
-  // Chama a API de previsão
-  const response = await fetch('https://sophia.discloud.app/prever', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(finalData),
-  });
-
-  const result = await response.json(); // Recebe o resultado do backend
-  const prob = result.risco_gestacional; // Obtém a probabilidade do risco gestacional
-
-  window.location.href = `probabilidade.html?prob=${prob}`; // Redireciona com a probabilidade
-  return false;
+  return false; // Impede o envio do formulário padrão
 }

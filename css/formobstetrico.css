@@ -27,15 +27,14 @@
   }
 
   .description .instruction h3 {
-  font-size: 1.563rem;
-  font-weight: 500 !important;
+    font-size: 1.563rem;
+    font-weight: 500 !important;
   }
 
   .description .instruction br {
     display: none;
   }
 }
-
 
 .imgcomp {
   width: 250px;
@@ -108,4 +107,5 @@
 .btn-next {
   background-color: #87388a;
   color: white;
+  width: 120%;
 }

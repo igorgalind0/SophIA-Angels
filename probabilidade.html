@@ -5,37 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Resultado</title>
     <link rel="stylesheet" href="css/simulation.css" />
-    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="css/menu.css" />
     <link rel="stylesheet" href="css/result.css" />
   </head>
   <body>
-    <script type="module" src="./script.js"></script>
     <nav class="menu-bg" aria-label="primária">
-<<<<<<< HEAD
-        <div class="menu container">
-            <div><img src="./img/logo.svg" alt="Logotipo Angels"></div>
-            <button data-menu="button" aria-expanded="false" aria-controls="menu">Menu</button>
-            <ul data-menu="list">
-                <li><a href="./index.html">Home</a></li>
-                <li><a href="./time.html">Time</a></li>
-                <li><a href="./dadosgestante.html">Predição</a></li>
-            </ul>
-        </div>
-=======
       <div class="menu container">
         <div><img src="./img/logo.svg" alt="Logotipo Angels" /></div>
-        <button data-menu="button" aria-expanded="false" aria-controls="menu">
-          Menu
-        </button>
-        <ul data-menu="list">
-          <li><a href="#">Home</a></li>
-          <li><a href="#sobre">Sobre</a></li>
-          <li><a href="#time">Time</a></li>
-          <li><a href="#parceiros">Parceiros</a></li>
+        <ul class="menu-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#sobre">Sobre</a></li>
+          <li><a href="index.html#time">Time</a></li>
+          <li><a href="index.html#parceiros">Parceiros</a></li>
         </ul>
       </div>
->>>>>>> 5c2c136ca6408583768b165eb400a0aea1801f34
     </nav>
 
     <main>
@@ -48,7 +32,7 @@
           <div class="gauge-center">
             <img class="imggraf" src="./img/form/Group.svg" alt="Gráfico" />
             <div class="needle" id="needle">
-              <img class="needle-img" alt="" />
+              <img src="./img/form/Vector.svg" class="needle-image" alt="" />
             </div>
           </div>
         </div>
@@ -59,41 +43,32 @@
       </div>
     </main>
 
-    <footer class="footer-bg">
-      <div class="footer container">
-        <p>
-          Layout por
-          <a href="https://www.instagram.com/carrancalabs/">@carrancalabs</a> |
-          desenvolvimento por
-          <a href="https://www.instagram.com/unifavipwyden/">@unifavip</a> | LTD
-          2025
-        </p>
-      </div>
-    </footer>
-
     <script>
       window.onload = () => {
         // Acessa o parâmetro 'prob' da URL
         const urlParams = new URLSearchParams(window.location.search);
         const prob = parseFloat(urlParams.get('prob')); // Converte para número
 
+        // Verifique se a probabilidade foi passada corretamente
         if (isNaN(prob)) {
           console.error('Erro: A probabilidade é inválida');
           alert('Erro ao processar a probabilidade.');
-          return;
+          return; // Interrompe a execução caso o valor de prob seja inválido
         }
 
-        console.log(`Probabilidade recebida da URL: ${prob}`);
+        console.log(`Probabilidade recebida da URL: ${prob}`); // Log para depuração
 
+        // Exibe a probabilidade como porcentagem
         document.getElementById('probText').innerText = `${prob.toFixed(2)}%`;
 
         // Ajuste o gráfico (agulha)
+
         const minAngle = -90;
         const maxAngle = 80;
         const angle = Math.min(
           maxAngle,
           Math.max(minAngle, (prob / 100) * (maxAngle - minAngle) + minAngle),
-        );
+        ); // Ajusta o ângulo do gráfico
 
         console.log(`Ajustando ângulo do gráfico: ${angle} graus`);
 
@@ -106,4 +81,15 @@
       };
     </script>
   </body>
+  <footer class="footer-bg">
+    <div class="footer container">
+      <p>
+        Layout por
+        <a href="https://www.instagram.com/carrancalabs/">@carrancalabs</a> |
+        desenvolvimento por
+        <a href="https://www.instagram.com/unifavipwyden/">@unifavip</a> | LTD
+        2025
+      </p>
+    </div>
+  </footer>
 </html>

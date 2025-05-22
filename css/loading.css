@@ -1,0 +1,17 @@
+h3 {
+  font-weight: 600;
+  font-size: 1.563rem;
+}
+.load-container {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.load-text {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20rem;
+}

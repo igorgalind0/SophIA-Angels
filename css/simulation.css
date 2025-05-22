@@ -84,7 +84,7 @@
 }
 
 @media (max-width: 820px) {
-  .form-grid{
+  .form-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
@@ -101,7 +101,7 @@
 
   .intro {
     gap: 0;
-  } 
+  }
 
   .intro img {
     width: 180px;
@@ -116,7 +116,7 @@
     font-weight: 400;
     font-size: 1.2rem;
   }
-  
+
   br {
     display: none;
   }

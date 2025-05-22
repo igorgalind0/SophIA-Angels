@@ -80,8 +80,21 @@
     margin: 10px 0;
 }
 
-li p {
+.time-list p{
      display: none;
+}
+
+.time-list a {
+    display: inline-block;
+    background: #0096c7;
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: white;
+}
+
+.time-list a:hover {
+    transition: .2s;
+    background: #004f69;
 }
 
 .modal {
@@ -130,6 +143,7 @@ li p {
     font-weight: 500;
     font-size: 1.5rem;
     margin-top: 10px;
+    color: var(--cor-primaria);
 }
 
 .close {
@@ -157,6 +171,41 @@ li p {
     }
 }
 
+@media (max-width: 1000px) {
+    .modal-content {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .modal-content h2 {
+        font-size: 1.2rem;
+    }
+
+    .modal-content p {
+        font-size: 0.9rem;
+        text-align: justify;
+    }
+
+    .close {
+        top: 10px;
+        right: 15px;
+        font-size: 24px;
+    }
+
+    .time > div ul {
+        gap: 10px;
+    }
+
+    .time-list li h1 {
+        font-size: 1rem;
+    }
+
+    .time-list li a {
+        font-size: .875rem;
+        padding: 8px 16px;
+    }
+}
+
 @media (max-width: 700px) {
     .time-list ul {
         gap: 50px;
@@ -173,29 +222,51 @@ li p {
     }
 
     .time-list li h1 {
-        font-size: .8rem;
+        font-size: 1.25rem;
         font-weight: 500;
+    }
+
+    .modal-content {
+        width: 500px;
+    }
+
+
+}
+
+@media (max-width: 550px) {
+    .modal-content {
+        width: 350px;
+    }
+
+    .modal-content img {
+        width: 75%;
+    }
+
+    .time-list li h1 {
+        font-size: .875rem;
+    }
+
+    .modal-content p {
+        font-size: .75rem;
     }
 }
 
-@media (max-width: 1000px) {
-  .modal-content {
-    width: 95%;
-    padding: 20px;
-  }
+@media (max-width: 420px) {
+    .modal-content {
+        width: 300px;
+    }
 
-  .modal-content h2 {
-    font-size: 1.2rem;
-  }
+    .time-list li h1 {
+        font-size: .7rem;
+    }
+}
 
-  .modal-content p {
-    font-size: 0.9rem;
-    text-align: justify;
-  }
+@media (max-width: 360px) {
+    .modal-content {
+        width: 250px;
+    }
 
-  .close {
-    top: 10px;
-    right: 15px;
-    font-size: 24px;
-  }
+    .modal-content p {
+        font-size: .7rem;
+    }
 }

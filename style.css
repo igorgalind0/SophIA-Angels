@@ -1,15 +1,13 @@
-@import "./css/global.css";
-@import "./css/animacao.css";
-@import "./css/menu.css";
-@import "./css/variaveis.css";
-@import "./css/main.css";
-@import "./css/sobre.css";
-@import "./css/time.css";
-@import "./css/info.css";
-@import "./css/desenvolvimento.css";
-@import "./css/footer.css";
-
-@import "./css/formobstetrico.css";
-@import "./css/result.css";
-@import "./css/simulation.css";
-
+@import './css/global.css';
+@import './css/animacao.css';
+@import './css/menu.css';
+@import './css/variaveis.css';
+@import './css/main.css';
+@import './css/sobre.css';
+@import './css/time.css';
+@import './css/info.css';
+@import './css/desenvolvimento.css';
+@import './css/footer.css';
+@import './css/formobstetrico.css';
+@import './css/result.css';
+@import './css/simulation.css';

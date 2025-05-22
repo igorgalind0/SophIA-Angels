@@ -4,12 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Resultado</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/simulation.css" />
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/menu.css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <script type="module" src="./script.js"></script>
-    <script  src="/js/modules/validaForm.js"></script>
+    <script src="/js/modules/validaForm.js"></script>
     <nav class="menu-bg" aria-label="primária">
+<<<<<<< HEAD
         <div class="menu container">
             <div><img src="./img/logo.svg" alt="Logotipo Angels"></div>
             <button data-menu="button" aria-expanded="false" aria-controls="menu">Menu</button>
@@ -19,6 +23,20 @@
                 <li><a href="./dadosgestante.html">Predição</a></li>
             </ul>
         </div>
+=======
+      <div class="menu container">
+        <div><img src="./img/logo.svg" alt="Logotipo Angels" /></div>
+        <button data-menu="button" aria-expanded="false" aria-controls="menu">
+          Menu
+        </button>
+        <ul data-menu="list">
+          <li><a href="#">Home</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#time">Time</a></li>
+          <li><a href="#parceiros">Parceiros</a></li>
+        </ul>
+      </div>
+>>>>>>> 5c2c136ca6408583768b165eb400a0aea1801f34
     </nav>
 
     <main>
@@ -44,48 +62,50 @@
 
     <footer class="footer-bg">
       <div class="footer container">
-          <p>Layout por <a href="https://www.instagram.com/carrancalabs/">@carrancalabs</a> | desenvolvimento por <a href="https://www.instagram.com/unifavipwyden/">@unifavip</a> | LTD 2025</p>
-      </div>    
+        <p>
+          Layout por
+          <a href="https://www.instagram.com/carrancalabs/">@carrancalabs</a> |
+          desenvolvimento por
+          <a href="https://www.instagram.com/unifavipwyden/">@unifavip</a> | LTD
+          2025
+        </p>
+      </div>
     </footer>
 
     <script>
       window.onload = async () => {
-        // Recupera os dados armazenados no localStorage
         const data = JSON.parse(localStorage.getItem('gestanteData'));
 
         if (!data) {
           alert('Erro ao recuperar os dados do localStorage.');
-          window.location.href = 'index.html'; // Redireciona para a página inicial em caso de erro
+          window.location.href = 'index.html';
           return;
         }
 
         try {
-          // Envia os dados para o backend
           const response = await fetch('http://localhost:5000/prever', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data),
           });
 
-          // Verifica se a resposta foi bem-sucedida
           if (!response.ok) {
             console.error('Erro ao chamar o backend');
             throw new Error('Erro ao chamar o backend');
           }
 
-          const result = await response.json(); // Recebe a resposta do backend
+          const result = await response.json();
+          console.log(result);
 
-          console.log(result); // Log para verificar a resposta
-          const prob = result.probabilidade; // Acessa a probabilidade do backend
+          const prob = result.probabilidade;
 
-          if (prob === undefined || isNaN(prob)) {
-            console.error('Erro: A probabilidade é undefined');
-            alert('Erro ao processar a probabilidade.');
-            return;
+          if (prob !== undefined && !isNaN(prob)) {
+            window.location.href = `probabilidade.html?prob=${prob}`;
+          } else {
+            console.error(
+              'Erro: A probabilidade não está definida corretamente',
+            );
           }
-
-          // Redireciona para a página de probabilidade com o valor correto
-          window.location.href = `probabilidade.html?prob=${prob}`;
         } catch (error) {
           console.error('Erro ao processar a requisição:', error);
           alert('Houve um erro ao processar os dados. Tente novamente.');

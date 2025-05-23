@@ -44,14 +44,6 @@
     font-size: 1.5rem;
 }
 
-.list > h1::after {
-    content: "";
-    display: block;
-    width: 256px;
-    height: 5px; 
-    background-image: url('../img/pseudoelement.svg');
-}
-
 .time-list {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -87,9 +79,21 @@
 .time-list a {
     display: inline-block;
     background: #0096c7;
-    padding: 10px 20px;
-    border-radius: 8px;
+    padding: 10px 12px;
+    border-radius: 50px;
     color: white;
+    text-decoration: none;
+}
+
+.time-list a::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url('../img/linkedin.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  vertical-align: middle;
 }
 
 .time-list a:hover {
@@ -129,7 +133,6 @@
     font-size: .875rem;
     text-align: center;
 }
-
 
 .modal-content img {
     margin-bottom: 20px;
@@ -230,6 +233,9 @@
         width: 500px;
     }
 
+    .time-list li a {
+        font-size: .7rem;
+    }
 
 }
 

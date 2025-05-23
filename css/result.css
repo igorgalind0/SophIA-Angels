@@ -1,12 +1,3 @@
-/* Estilos gerais para a página */
-body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #f7f7f7; /* Cor de fundo da página */
-  color: #333; /* Cor do texto */
-  margin: 0;
-  padding: 0;
-}
-
 /* Header da página */
 header {
   background-color: #b1488a; /* Cor do cabeçalho */

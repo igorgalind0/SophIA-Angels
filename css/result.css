@@ -33,11 +33,6 @@ strong {
   position: relative;
 }
 
-.gauge-center {
-  position: relative;
-  width: fit-content;
-}
-
 /* Grupo do gráfico (elementos dentro do gráfico) */
 .gauge-group {
   position: absolute;
@@ -45,19 +40,22 @@ strong {
   right: 10.88%;
   top: 0%;
   bottom: -16.92%;
+  z-index: 1;
 }
 
 /* Agulha - Indicador da probabilidade */
+/* Agulha - Indicador da probabilidade */
+/* Agulha - Indicador da probabilidade */
 .needle {
   position: absolute;
-  bottom: 10%;
-  left: 47%;
-  min-width: 26px;
-  min-height: 125px;
-  transform: translateX(-50%) rotate(-100deg);
-  transform-origin: center bottom;
+  z-index: 2;
+  top: 50%; /* Centraliza a agulha no eixo vertical */
+  left: 50%; /* Centraliza a agulha no eixo horizontal */
+  transform: rotate(0deg); /* Ajuste a rotação inicial para 0deg */
+  transform-origin: 11px 118px;
   transition: transform 1s ease-in-out;
-  background-image: url;
+  margin-top: -64px;
+  margin-left: -11px;
 }
 
 @media (max-width: 820px) {
@@ -72,18 +70,7 @@ strong {
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
-  .needle {
-    max-width: 15px;
-    max-height: 80px;
-    position: absolute;
-    bottom: 10%;
-    left: 47%;
-    width: 1rem;
-    height: 5rem;
-    transform: translateX(-50%) rotate(-100deg);
-    transform-origin: left bottom;
-    transition: transform 1s ease-in-out;
-  }
+
   .gauge-wrapper {
     display: flex;
     justify-content: center;
@@ -92,5 +79,11 @@ strong {
     top: 50px; /* Ajuste a posição de acordo com a necessidade */
     overflow: hidden;
     position: relative;
+  }
+}
+@media (max-width: 360px) {
+  .needle-image {
+    max-height: 90px;
+    padding: 20px 3px;
   }
 }

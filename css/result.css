@@ -52,9 +52,9 @@ strong {
   top: 50%; /* Centraliza a agulha no eixo vertical */
   left: 50%; /* Centraliza a agulha no eixo horizontal */
   transform: rotate(0deg); /* Ajuste a rotação inicial para 0deg */
-  transform-origin: 11px 118px;
+  transform-origin: 11px 120px;
   transition: transform 1s ease-in-out;
-  margin-top: -64px;
+  margin-top: -54px;
   margin-left: -11px;
 }
 
@@ -84,6 +84,6 @@ strong {
 @media (max-width: 360px) {
   .needle-image {
     max-height: 90px;
-    padding: 20px 3px;
+    padding: 20px 2px;
   }
 }

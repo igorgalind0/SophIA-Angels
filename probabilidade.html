@@ -4,18 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Resultado</title>
-    <link rel="stylesheet" href="css/simulation.css" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="css/menu.css" />
-    <link rel="stylesheet" href="css/result.css" />
-    <link rel="shortcut icon" href="./img/favicon.svg" type="image/x-icon">
-
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="shortcut icon" href="./img/favicon.svg" type="image/x-icon" />
   </head>
   <body>
     <nav class="menu-bg" aria-label="primária">
       <div class="menu container">
         <div><img src="./img/logo.svg" alt="Logotipo Angels" /></div>
-        <ul data-menu="menu-list">
+        <button data-menu="button" aria-expanded="false" aria-controls="menu">
+          Menu
+        </button>
+        <ul data-menu="list">
           <li><a href="./index.html">Home</a></li>
           <li><a href="./index.html#sobre">Sobre</a></li>
           <li><a href="./index.html#parceiros">Parceiros</a></li>
@@ -41,10 +40,20 @@
         </div>
       </div>
       <div class="form-buttons">
-        <a href="historicoobstetrico.html"
-          ><button class="btn-back">Voltar</button></a
+        <button
+          class="btn-back"
+          type="button"
+          onclick="window.location.href='historicoobstetrico.html'"
         >
-        <a href="index.html"><button class="btn-next">Nova predição</button></a>
+          Voltar
+        </button>
+        <button
+          class="btn-next"
+          type="submit"
+          onclick="clearStorageAndRedirect();"
+        >
+          Nova Predição
+        </button>
       </div>
     </main>
 
@@ -84,6 +93,12 @@
           'needle',
         ).style.transform = `rotate(${angle}deg)`;
       };
+    </script>
+    <script>
+      function clearStorageAndRedirect() {
+        localStorage.clear();
+        window.location.href = 'index.html';
+      }
     </script>
   </body>
   <footer class="footer-bg">

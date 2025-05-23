@@ -1,39 +1,3 @@
-/* Header da página */
-header {
-  background-color: #b1488a; /* Cor do cabeçalho */
-  padding: 10px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-header .logo {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: white;
-}
-
-header .logo h1 {
-  font-size: 24px;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-size: 18px;
-}
-
-nav ul li a:hover {
-  color: #f2e4ff; /* Cor de destaque ao passar o mouse */
-}
-
 /* Contêiner principal de resultados */
 .result-container {
   display: flex;
@@ -56,45 +20,6 @@ nav ul li a:hover {
 
 strong {
   color: #5a073e; /* Cor de destaque no texto */
-}
-
-/* Botões */
-.buttons {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #b1488a; /* Cor do fundo dos botões */
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-button:hover {
-  background-color: #e16e86; /* Cor ao passar o mouse */
-}
-
-.voltar {
-  background-color: #e16e86; /* Cor para o botão "Voltar" */
-}
-
-.nova {
-  background-color: #7c3b66; /* Cor para o botão "Nova previsão" */
-}
-
-.voltar:hover {
-  background-color: #b1488a;
-}
-
-.nova:hover {
-  background-color: #5a073e;
 }
 
 /* Gráfico do medidor */
@@ -135,12 +60,6 @@ button:hover {
   background-image: url;
 }
 
-/* Estilo de texto nas páginas */
-h1,
-p {
-  font-family: 'Poppins', sans-serif;
-}
-
 @media (max-width: 820px) {
   .result-container {
     display: flex;
@@ -164,5 +83,14 @@ p {
     transform: translateX(-50%) rotate(-100deg);
     transform-origin: left bottom;
     transition: transform 1s ease-in-out;
+  }
+  .gauge-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    top: 50px; /* Ajuste a posição de acordo com a necessidade */
+    overflow: hidden;
+    position: relative;
   }
 }

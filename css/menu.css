@@ -93,18 +93,20 @@
         position: absolute;
         background: #61264b;
         padding: 10px;
-        top: 65px;
+        top: 60px;
         right: 20px;
         border-radius: 0 0 8px 8px;
         box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.2);
         animation: slideDown 0.3s ease-out;
         text-align: left;
-        width: 100px;
+        width: 150px;
         z-index: 400;
     }
 
-    [data-menu="list"].ativo a {
-        font-size: .875rem
+    [data-menu="list"].ativo li a {
+        font-size: 1rem;
+        display: inline-block;
+        margin-bottom: 10px;
     }
 
     .menu > div > img {

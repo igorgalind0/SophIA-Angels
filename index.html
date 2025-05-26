@@ -5,19 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="./img/favicon.svg" type="image/x-icon">
-    <title>SophIA - Predição de Morte Fetal</title>
+    <title>Angels - Predição de Morte Fetal</title>
 </head>
 <body>
     <nav class="menu-bg" aria-label="primária">
         <div class="menu container">
-            <div><img src="./img/logo.svg" alt="Logotipo Angels"></div>
+            <a href="./index.html"><div><img src="./img/logo.svg" alt="Logotipo Angels"></div></a>
             <button data-menu="button" aria-expanded="false" aria-controls="menu">Menu</button>
             <ul data-menu="list">
-                <li><a href="#">Home</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#parceiros">Parceiros</a></li>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./index.html#sobre">Sobre</a></li>
+                <li><a href="./index.html#parceiros">Parceiros</a></li>
                 <li><a href="./time.html">Time</a></li>
                 <li><a href="./dadosgestante.html">Predição</a></li>
+                <li><a href="https://dashangels.dotlabbrazil.com.br/" target="_blank">Dashboard</a></li>
             </ul>
         </div>
     </nav>
@@ -29,7 +30,12 @@
 
             <p class="fadeInDown" data-anime="400">A Angels é uma ferramenta desenvolvida para auxiliar o profissional de saúde na identificação de um possível caso de óbito fetal, oferecendo suporte à tomada de decisão durante o pré-natal. Utilizando inteligência artificial, a ferramenta busca minimizar desfechos negativos por meio de uma predição assertiva, contribuindo para um acompanhamento mais eficaz e preventivo.</p>
 
-            <a class="button fadeInDown" data-anime="600" class="button" href="dadosgestante.html">Predição</a>
+            <div class="buttons">
+                <a class="button fadeInDown" data-anime="600" href="dadosgestante.html">Predição</a>
+
+                <a class="button-dash fadeInDown" data-anime="600" href="https://dashangels.dotlabbrazil.com.br/" target="_blank">Dashboard</a>
+            </div>
+
         </div>
 
         <div><img class="fadeInDown" data-anime="800" src="./img/main/imgmain.svg" alt="Ilustração de Médico"></div>
@@ -43,12 +49,12 @@
             
                 <div>
                     <h1>O que é <span>"Angels"?</span></h1>
-                    <p>A Angels foi desenvolvida com base em uma metodologia científica rigorosa, avaliando diferentes modelos de aprendizado de máquina, técnicas de seleção de hiperparâmetros e atributos definidos por especialistas na área.</p>
+                    <p>Durante o uso da angels, os profissionais de saúde contam com interfaces organizadas para o registro de informações sociodemográficas, histórico de saúde e antecedentes obstétricos da gestante. Essas informações fornecem dados ao modelo de inteligência artificial, permitindo uma predição personalizada do risco de óbito e contribuindo para uma tomada de decisão precisa. </p>
                 </div>
             </div>
             
             <div class="sobre-ferramenta">
-                <p>A ferramenta tem como objetivo predizer a probabilidade de desfechos gestacionais, como morte fetal, alertando o profissional de saúde no momento do pré-natal da gestante. Sua aplicação é especialmente relevante para o Sistema Único de Saúde (SUS), pois tem o potencial de aprimorar as consultas pré-natal, identificando gestações de risco. Essa tecnologia inovadora fortalece a capacidade de resposta do SUS, contribuindo para a prevenção de mortes fetais no Brasil.</p>
+                <p>O preenchimento completo desses campos é essencial para que a ferramenta funcione de forma adequada e entregue resultados individualizados e alinhados à realidade de cada gestação.</p>
 
                 <div><img src="./img/sobre/sobreimg2.svg" alt="Ilustração mulher e tecnologia"></div>
             </div>
@@ -72,16 +78,14 @@
     <section class="info container" data-anima="scroll">
         <div><img src="./img/infoimg.svg" alt="Ilustração pessoas montando o quebra-cabeça de uma lâmpada"></div>
 
-        <p>A Angels foi desenvolvida por pesquisadores do dotLAB Brazil da Universidade de Pernambuco (UPE) em parceria com o grupo de pesquisa Carranca da Universidade Federal de Pernambuco (UFPE). A ferramenta inclui parte dos resultados da dissertação de mestrado da pesquisadora Maria Eduarda Ferro de Mello integrante do grupo de pesquisa dotLAB. A equipe do CarrancaLab assumiu o desafio de transformar essa inovação tecnológica em uma ferramenta prática e acessível para profissionais de saúde. O laboratório desenvolveu a interface e a usabilidade do sistema, assegurando que sua ergonomia atendesse às demandas clínicas e contribuindo para uma experiência intuitiva e eficiente.</p>
+        <p>Angels é uma ferramenta inovadora na saúde materno-infantil que utiliza inteligência artificial para apoiar a tomada de decisão clínica e reduzir riscos de óbito fetal. Desenvolvida com base em uma metodologia científica rigorosa, a ferramenta foi treinada com dados reais do Programa Mãe Coruja Pernambucana. Após uma série de experimentos, selecionamos o modelo de IA com o melhor desempenho, promovendo um pré-natal mais qualificado e preventivo. </p>
     </section>
 
     <section class="desenvolvimento container" id="parceiros" data-anima="scroll">
         <h1>Desenvolvimento</h1>
 
         <div>
-            <p>O desenvolvimento do ANGELS foi possível graças à colaboração entre diferentes parceiros e especialistas, cuja contribuição foi fundamental para tornar esta ferramenta uma realidade. O modelo preditivo foi criado pela mestranda Eduarda Ferro durante sua pesquisa de mestrado, onde aplicou técnicas avançadas de treinamento e aprendizado de máquina em inteligência artificial para analisar dados clínicos do antigo Programa Mãe Coruja Pernambucana.</p>
-
-            <p>Essa parceria reforça o papel essencial da colaboração no avanço de soluções inovadoras em saúde, unindo pesquisa acadêmica, tecnologia de ponta e design para enfrentar desafios críticos como a morte fetal.</p>
+            <p>O objetivo da ferramenta é apoiar os profissionais de saúde na tomada de decisões clínicas, sinalizando de forma precoce os casos com maior risco de óbito fetal durante a gestação, permitindo intervenções oportunas e eficazes.</p>
         </div>
     </section>
 
@@ -111,7 +115,7 @@
 
     <footer class="footer-bg">
         <div class="footer container">
-            <p>Layout por <a href="https://www.instagram.com/carrancalabs/">@carrancalabs</a> | desenvolvimento por <a href="https://www.instagram.com/unifavipwyden/">@unifavip</a> | LTD 2025</p>
+            <p>Layout por <a href="https://www.instagram.com/carrancalabs/">@carrancalabs</a> | desenvolvimento por <a href="https://www.instagram.com/unifavipwyden/">@unifavipwyden</a> | LTD 2025</p>
         </div>    
     </footer>
 

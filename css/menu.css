@@ -17,6 +17,7 @@
 [data-menu="list"] a {
     color: #fff;
     font-size: 1rem;
+    font-weight: bold;
     transition: .2s;
 
     position: relative;
@@ -51,12 +52,12 @@
     }
 } */
 
-@media (max-width: 670px) {
+@media (max-width: 750px) {
 
     [data-menu="button"] {
         display: flex;
         align-items: center;
-        font-family: 'Cabin';
+        font-family: 'Gotham';
         font-weight: 500;
         font-size: 1rem;
         color: #fff;
@@ -109,7 +110,7 @@
         margin-bottom: 10px;
     }
 
-    .menu > div > img {
+    .menu a > div > img {
         width: 150px;
         height: auto;
     }

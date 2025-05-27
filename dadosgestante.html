@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/global.css" />
     <link rel="stylesheet" href="css/menu.css" />
     <link rel="stylesheet" href="./style.css" />
-    <link rel="shortcut icon" href="./img/favicon.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="./img/favicon.svg" type="image/x-icon" />
     <title>Dados da Gestante</title>
   </head>
   <body>
@@ -15,18 +15,26 @@
     <script src="js/modules/validaForm.js"></script>
     <!-- Inclusão do validaForm.js -->
     <nav class="menu-bg" aria-label="primária">
-        <div class="menu container">
-            <a href="./index.html"><div><img src="./img/logo.svg" alt="Logotipo Angels"></div></a>
-            <button data-menu="button" aria-expanded="false" aria-controls="menu">Menu</button>
-            <ul data-menu="list">
-                <li><a href="./index.html">Home</a></li>
-                <li><a href="./index.html#sobre">Sobre</a></li>
-                <li><a href="./index.html#parceiros">Parceiros</a></li>
-                <li><a href="./time.html">Time</a></li>
-                <li><a href="./dadosgestante.html">Predição</a></li>
-                <li><a href="https://dashangels.dotlabbrazil.com.br/" target="_blank">Dashboard</a></li>
-            </ul>
-        </div>
+      <div class="menu container">
+        <a href="./index.html"
+          ><div><img src="./img/logo.svg" alt="Logotipo Angels" /></div
+        ></a>
+        <button data-menu="button" aria-expanded="false" aria-controls="menu">
+          Menu
+        </button>
+        <ul data-menu="list">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./index.html#sobre">Sobre</a></li>
+          <li><a href="./index.html#parceiros">Parceiros</a></li>
+          <li><a href="./time.html">Time</a></li>
+          <li><a href="./dadosgestante.html">Predição</a></li>
+          <li>
+            <a href="https://dashangels.dotlabbrazil.com.br/" target="_blank"
+              >Dashboard</a
+            >
+          </li>
+        </ul>
+      </div>
     </nav>
 
     <main class="container-intro">
@@ -34,103 +42,85 @@
         <img src="./img/form/computador.png" alt="Computador" />
         <div>
           <h1>Dados da gestante</h1>
-          <p>Insira as informações iniciais da gestante</p>
+          <p>Preencha os dados da paciente</p>
+          <br />
+          <p>
+            Essas informações ajudarão para gerar a predição individualizada
+          </p>
         </div>
       </section>
 
       <!-- Alteração no formulário para usar a função saveAndNext do validaForm.js -->
-      <form onsubmit="return saveAndNext('historico.html')">
-        <div class="form-grid">
-          <div class="form-group">
-            <label for="estadocivil">Estado civil</label>
-            <select id="estadocivil" name="mc_mul_est_civil" required>
-              <option disabled selected value="">Não informado</option>
-              <option>Solteira</option>
-              <option>Casada</option>
-              <option>Viúva</option>
-              <option>Separada Judicialmente</option>
-              <option>Divorciada</option>
-              <option>Outra</option>
-            </select>
-          </div>
+      <form
+        class="form-container"
+        onsubmit="return saveAndNext('historico.html')"
+      >
+        <div class="form-group">
+          <label for="estadocivil">Estado civil</label>
+          <select id="estadocivil" name="mc_mul_est_civil" required>
+            <option disabled selected value="">Não informado</option>
+            <option>Solteira</option>
+            <option>Casada</option>
+            <option>Viúva</option>
+            <option>Separada Judicialmente</option>
+            <option>Divorciada</option>
+            <option>Outra</option>
+          </select>
+        </div>
 
-          <div class="form-group">
-            <label for="peso">Peso antes da gestação</label>
-            <input
-              type="number"
-              id="peso"
-              name="mc_get_peso_anterior"
-              placeholder="Não informado"
-              onfocus="this.placeholder=''"
-              onblur="this.placeholder='Não informado'"
-              required
-            />
-          </div>
+        <div class="form-group">
+          <label for="peso">Peso pré-gestacional</label>
+          <input
+            type="number"
+            id="peso"
+            name="mc_get_peso_anterior"
+            placeholder="Preencha peso em Kgs"
+            onfocus="this.placeholder=''"
+            onblur="this.placeholder='Preencha peso em Kgs'"
+            required
+          />
+        </div>
 
-          <div class="form-group">
-            <label for="idade">Idade</label>
-            <input
-              type="number"
-              id="idade"
-              name="idade"
-              placeholder="Não informado"
-              onfocus="this.placeholder=''"
-              onblur="this.placeholder='Não informado'"
-              required
-            />
-          </div>
+        <div class="form-group">
+          <label for="idade">Idade</label>
+          <input
+            type="number"
+            id="idade"
+            name="idade"
+            placeholder="Não informado"
+            onfocus="this.placeholder=''"
+            onblur="this.placeholder='Não informado'"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="raca">Raça</label>
+          <select id="raca" name="mc_pes_raca_etnia" required>
+            <option disabled selected value="">
+              <p style="color: #5c5c5c">Não declarada</p>
+            </option>
+            <option>Branca</option>
+            <option>Negra</option>
+            <option>Parda</option>
+            <option>Amarela</option>
+            <option>Indígena</option>
+          </select>
+        </div>
 
-          <div class="form-group">
-            <label for="risco">Risco gestacional</label>
-            <select id="risco" name="mc_get_risco_gestacional" required>
-              <option>Não informado</option>
-              <option>Alto</option>
-              <option>Habitual</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="raca">Raça</label>
-            <select id="raca" name="mc_pes_raca_etnia" required>
-              <option disabled selected value="">
-                <p style="color: #5c5c5c">Não declarada</p>
-              </option>
-              <option>Branca</option>
-              <option>Negra</option>
-              <option>Parda</option>
-              <option>Amarela</option>
-              <option>Indígena</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="semana">Semana de início do pré-natal</label>
-            <input
-              type="number"
-              id="semana"
-              name="primeiro_pre_natal"
-              placeholder="Não informado"
-              onfocus="this.placeholder=''"
-              onblur="this.placeholder='Não informado'"
-              required
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="escolaridade">Escolaridade</label>
-            <select id="escolaridade" name="mc_dae_escolaridade" required>
-              <option disabled selected value="">Não informado</option>
-              <option>Não alfabetizada</option>
-              <option>Fundamental I completo</option>
-              <option>Fundamental I incompleto</option>
-              <option>Fundamental II completo</option>
-              <option>Fundamental II incompleto</option>
-              <option>Médio completo</option>
-              <option>Médio incompleto</option>
-              <option>Superior completo</option>
-              <option>Superior incompleto</option>
-            </select>
-          </div>
+        <div class="form-group">
+          <label for="escolaridade">Escolaridade</label>
+          <select id="escolaridade" name="mc_dae_escolaridade" required>
+            <option disabled selected value="">Não informado</option>
+            <option>Não alfabetizada</option>
+            <option>Fundamental I completo</option>
+            <option>Fundamental I incompleto</option>
+            <option>Fundamental II completo</option>
+            <option>Fundamental II incompleto</option>
+            <option>Médio completo</option>
+            <option>Médio incompleto</option>
+            <option>Superior completo</option>
+            <option>Superior incompleto</option>
+          </select>
         </div>
         <div class="form-buttons">
           <button
@@ -150,11 +140,16 @@
         </div>
       </form>
     </main>
-
-    <footer class="footer-bg">
-        <div class="footer container">
-            <p>Layout por <a href="https://www.instagram.com/carrancalabs/">@carrancalabs</a> | desenvolvimento por <a href="https://www.instagram.com/unifavipwyden/">@unifavipwyden</a> | LTD 2025</p>
-        </div>    
-    </footer>
   </body>
+  <footer class="footer-bg">
+    <div class="footer container">
+      <p>
+        Layout por
+        <a href="https://www.instagram.com/carrancalabs/">@carrancalabs</a> |
+        desenvolvimento por
+        <a href="https://www.instagram.com/unifavipwyden/">@unifavipwyden</a>
+        | LTD 2025
+      </p>
+    </div>
+  </footer>
 </html>

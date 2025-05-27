@@ -4,83 +4,121 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
-    <link rel="shortcut icon" href="./img/favicon.svg" type="image/x-icon">
-
+    <link rel="stylesheet" href="./css/simulation.css" />
+    <link rel="shortcut icon" href="./img/favicon.svg" type="image/x-icon" />
+    <title>Histórico Obstétrico</title>
   </head>
   <body>
     <script type="module" src="./script.js"></script>
     <script src="js/modules/validaForm.js"></script>
     <nav class="menu-bg" aria-label="primária">
-        <div class="menu container">
-            <a href="./index.html"><div><img src="./img/logo.svg" alt="Logotipo Angels"></div></a>
-            <button data-menu="button" aria-expanded="false" aria-controls="menu">Menu</button>
-            <ul data-menu="list">
-                <li><a href="./index.html">Home</a></li>
-                <li><a href="./index.html#sobre">Sobre</a></li>
-                <li><a href="./index.html#parceiros">Parceiros</a></li>
-                <li><a href="./time.html">Time</a></li>
-                <li><a href="./dadosgestante.html">Predição</a></li>
-                <li><a href="https://dashangels.dotlabbrazil.com.br/" target="_blank">Dashboard</a></li>
-            </ul>
-        </div>
+      <div class="menu container">
+        <a href="./index.html"
+          ><div><img src="./img/logo.svg" alt="Logotipo Angels" /></div
+        ></a>
+        <button data-menu="button" aria-expanded="false" aria-controls="menu">
+          Menu
+        </button>
+        <ul data-menu="list">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./index.html#sobre">Sobre</a></li>
+          <li><a href="./index.html#parceiros">Parceiros</a></li>
+          <li><a href="./time.html">Time</a></li>
+          <li><a href="./dadosgestante.html">Predição</a></li>
+          <li>
+            <a href="https://dashangels.dotlabbrazil.com.br/" target="_blank"
+              >Dashboard</a
+            >
+          </li>
+        </ul>
+      </div>
     </nav>
 
-    <div class="description">
-      <img
-        class="imgcomp"
-        src="./img/form/computador.png"
-        alt="Ilustração computador"
-      />
-      <div class="instruction">
-        <h1>Histórico obstétrico</h1>
-        <h3>
-          Registre informações <br />
-          sobre gestações passadas
-        </h3>
-      </div>
-    </div>
-
-    <form class="form-container" onsubmit="return saveAndNext('loading.html')">
-      <div class="form-row">
-        <label for="gestacoes">Quantidade de gestações</label>
-        <input id="gestacoes" type="number" name="sd_quant_gest" required />
-      </div>
-      <div class="form-row">
-        <label for="abortos">Quantidade de abortos</label>
-        <input id="abortos" type="number" name="sd_quant_aborto" required />
-      </div>
-      <div class="form-row">
-        <label for="partos">Quantidade de partos</label>
-        <input id="partos" type="number" name="sd_quant_partos" required />
-      </div>
-      <div class="form-row">
-        <label for="tempo">Tempo intergestacional</label>
-        <input
-          id="tempo"
-          type="number"
-          name="time_between_pregnancies"
-          required
+    <main class="container-intro">
+      <section class="description intro">
+        <img
+          class="imgcomp"
+          src="./img/form/computador.png"
+          alt="Ilustração computador"
         />
-      </div>
+        <div>
+          <h1>Histórico obstétrico</h1>
+          <h3>
+            Registre informações <br />
+            sobre gestações passadas
+          </h3>
+        </div>
+      </section>
 
-      <div class="form-buttons">
-        <button
-          class="btn-back"
-          type="button"
-          onclick="window.location.href='historico.html'"
-        >
-          Voltar
-        </button>
-        <button class="btn-next" type="submit" onclick="submitToBackend()">
-          Predição
-        </button>
-      </div>
-    </form>
+      <form onsubmit="return saveAndNext('loading.html')">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="gestacoes">Quantidade de gestações</label>
+            <input id="gestacoes" type="number" name="sd_quant_gest" required />
+          </div>
+          <div class="form-group">
+            <label for="abortos">Quantidade de abortos</label>
+            <input id="abortos" type="number" name="sd_quant_aborto" required />
+          </div>
+          <div class="form-group">
+            <label for="partos">Quantidade de partos</label>
+            <input id="partos" type="number" name="sd_quant_partos" required />
+          </div>
+          <div class="form-group">
+            <label for="tempo">Tempo intergestacional</label>
+            <input
+              id="tempo"
+              type="number"
+              name="time_between_pregnancies"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="semana">Semana de início do pré-natal</label>
+            <input
+              type="number"
+              id="semana"
+              name="primeiro_pre_natal"
+              placeholder="Não informado"
+              onfocus="this.placeholder=''"
+              onblur="this.placeholder='Não informado'"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="risco">Risco gestacional</label>
+            <select id="risco" name="mc_get_risco_gestacional" required>
+              <option>Não informado</option>
+              <option>Alto</option>
+              <option>Habitual</option>
+            </select>
+          </div>
+        </div>
 
-    <footer class="footer-bg">
-        <div class="footer container">
-            <p>Layout por <a href="https://www.instagram.com/carrancalabs/">@carrancalabs</a> | desenvolvimento por <a href="https://www.instagram.com/unifavipwyden/">@unifavipwyden</a> | LTD 2025</p>
-        </div>    
-    </footer>
+        <div class="form-buttons">
+          <button
+            class="btn-back"
+            type="button"
+            onclick="window.location.href='historico.html'"
+          >
+            Voltar
+          </button>
+          <button class="btn-next" type="submit" onclick="submitToBackend()">
+            Predição
+          </button>
+        </div>
+      </form>
+    </main>
   </body>
+  <footer class="footer-bg">
+    <div class="footer container">
+      <p>
+        Layout por
+        <a href="https://www.instagram.com/carrancalabs/">@carrancalabs</a> |
+        desenvolvimento por
+        <a href="https://www.instagram.com/unifavipwyden/">@unifavipwyden</a>
+        | LTD 2025
+      </p>
+    </div>
+  </footer>
 </html>

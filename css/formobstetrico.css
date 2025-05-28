@@ -1,5 +1,4 @@
 .description {
-  padding: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,26 +7,21 @@
 }
 
 .description h3 {
-  font-size: 1.563rem;
   font-weight: 500 !important;
 }
 
 @media (max-width: 820px) {
-  .description {
-    gap: 0;
-  }
-
   .description .imgcomp {
     width: 180px;
   }
 
   .description .instruction h1 {
     font-weight: 500;
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   .description .instruction h3 {
-    font-size: 1.563rem;
+    font-size: 1rem;
     font-weight: 500 !important;
   }
 
@@ -87,6 +81,12 @@
 
 @media (max-width: 360px) {
   label {
-    font-size: 12px;
+    font-size: .875rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .description {
+    flex-direction: column;
   }
 }

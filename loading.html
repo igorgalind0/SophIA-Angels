@@ -7,23 +7,30 @@
     <link rel="stylesheet" href="css/loading.css" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="css/menu.css" />
-    <link rel="shortcut icon" href="./img/favicon.svg" type="image/x-icon">
-
+    <link rel="shortcut icon" href="./img/favicon.svg" type="image/x-icon" />
   </head>
   <body>
     <nav class="menu-bg" aria-label="primária">
-        <div class="menu container">
-            <a href="./index.html"><div><img src="./img/logo.svg" alt="Logotipo Angels"></div></a>
-            <button data-menu="button" aria-expanded="false" aria-controls="menu">Menu</button>
-            <ul data-menu="list">
-                <li><a href="./index.html">Home</a></li>
-                <li><a href="./index.html#sobre">Sobre</a></li>
-                <li><a href="./index.html#parceiros">Parceiros</a></li>
-                <li><a href="./time.html">Time</a></li>
-                <li><a href="./dadosgestante.html">Predição</a></li>
-                <li><a href="https://dashangels.dotlabbrazil.com.br/" target="_blank">Dashboard</a></li>
-            </ul>
-        </div>
+      <div class="menu container">
+        <a href="./index.html"
+          ><div><img src="./img/logo.svg" alt="Logotipo Angels" /></div
+        ></a>
+        <button data-menu="button" aria-expanded="false" aria-controls="menu">
+          Menu
+        </button>
+        <ul data-menu="list">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./index.html#sobre">Sobre</a></li>
+          <li><a href="./index.html#parceiros">Parceiros</a></li>
+          <li><a href="./time.html">Time</a></li>
+          <li><a href="./dadosgestante.html">Predição</a></li>
+          <li>
+            <a href="https://dashangels.dotlabbrazil.com.br/" target="_blank"
+              >Dashboard</a
+            >
+          </li>
+        </ul>
+      </div>
     </nav>
 
     <main>
@@ -40,15 +47,26 @@
           >
             Voltar
           </button>
-          <button class="btn-next" onclick="window.location.href='dadosgestante.html'">Nova predição</button>
+          <button
+            class="btn-next"
+            onclick="window.location.href='dadosgestante.html'"
+          >
+            Nova predição
+          </button>
         </div>
       </div>
     </main>
 
     <footer class="footer-bg">
       <div class="footer container">
-        <p>Layout por <a href="https://www.instagram.com/carrancalabs/">@carrancalabs</a> | desenvolvimento por <a href="https://www.instagram.com/unifavipwyden/">@unifavipwyden</a> | LTD 2025</p>
-      </div>    
+        <p>
+          Layout por
+          <a href="https://www.instagram.com/carrancalabs/">@carrancalabs</a> |
+          desenvolvimento por
+          <a href="https://www.instagram.com/unifavipwyden/">@unifavipwyden</a>
+          | LTD 2025
+        </p>
+      </div>
     </footer>
 
     <script>
@@ -56,12 +74,6 @@
         const startTime = Date.now();
         // Recupera os dados armazenados no localStorage
         const data = JSON.parse(localStorage.getItem('gestanteData'));
-
-        if (!data) {
-          alert('Erro ao recuperar os dados do localStorage.');
-          window.location.href = 'index.html'; // Redireciona para a página inicial em caso de erro
-          return;
-        }
 
         try {
           // Envia os dados para o backend
